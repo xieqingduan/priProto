@@ -5,7 +5,6 @@ import java.util.Map;
 
 //协议头
 public class Header {
-
     private int crcCode = 0xabef0101;  //校验码+协议号+版本号
     private int length;                //消息长度
     private long sessionID;            //会话id
