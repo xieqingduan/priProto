@@ -28,7 +28,6 @@ Netty协议栈消息定义包含两部分：
         private Header header;  //消息头
         private Object body;    //消息体
 
-
     public class Header {
         private int crcCode = 0xabef0101;  //校验码+协议号+版本号
         private int length;                //消息长度
@@ -36,6 +35,14 @@ Netty协议栈消息定义包含两部分：
         private byte type;                 //消息类型
         private byte priority;             //消息优先级
         private Map<String,Object> attachment = new HashMap<String, Object>();//消息附件
+    
+    public enum MessageType {
+        SERVICE_REQ((byte) 0),//业务请求
+        SERVICE_RESP((byte) 1),//业务响应
+        LOGIN_REQ((byte) 3), //登陆请求
+        LOGIN_RESP((byte) 4),//登陆响应
+        HEARTBEAT_REQ((byte) 5),//心跳请求
+        HEARTBEAT_RESP((byte) 6);//心跳响应
 
 ## 链路的建立
 

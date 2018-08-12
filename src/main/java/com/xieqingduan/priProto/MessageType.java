@@ -1,7 +1,6 @@
 package com.xieqingduan.priProto;
 
 public enum MessageType {
-
     SERVICE_REQ((byte) 0),//业务请求
     SERVICE_RESP((byte) 1),//业务响应
     LOGIN_REQ((byte) 3), //登陆请求
